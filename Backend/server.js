@@ -5,11 +5,15 @@ const mongoose = require('mongoose')
 const BooksModule = require('./model/bookmodel');
 const bookroute = require('./routes/booksRoute');
 const cors = require('cors');
+const userRoute = require('./routes/userRoute');
+app.use(express.json());
 app.use(cors());
 // app.get("/book",(req,res)=>{
 //     res.send("hare Krishna : ");
 // }) 
 app.use('/book',bookroute);
+console.log('post method :');
+app.use('/user', userRoute);
  
 
 const PORT = 500
